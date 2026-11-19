@@ -1,6 +1,6 @@
-# Agent Syndicate
+# Investment Agent Council
 
-Agent Syndicate is a CLI framework for bottom-up investment research informed by evolutionary principles. Start with evidence about a specific technology, customer behavior, or company. Use evolutionary ideas such as variation, selection, and recombination to surface hypotheses, then test them against alternative explanations. The framework prepares separate evidence packets so specialist perspectives can be compared.
+Investment Agent Council is a CLI framework for bottom-up investment research informed by evolutionary principles. Start with evidence about a specific technology, customer behavior, or company. Use evolutionary ideas such as variation, selection, and recombination to surface hypotheses, then test them against alternative explanations. The framework prepares separate evidence packets so specialist perspectives can be compared.
 
 **Current status:** working local source import, integrity checks, expert-specific search, and bounded context preparation. Live model research, agent debate, TiDB, Filesystem/Drive9, and mem9 adapters are still planned. No UI or server is required.
 

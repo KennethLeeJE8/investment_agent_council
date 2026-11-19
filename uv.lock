@@ -344,7 +344,7 @@ wheels = [
 ]
 
 [[package]]
-name = "agent-syndicate"
+name = "investment-agent-council"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

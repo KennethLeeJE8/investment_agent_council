@@ -3,7 +3,7 @@ requires = ["hatchling>=1.27,<2"]
 build-backend = "hatchling.build"
 
 [project]
-name = "agent-syndicate"
+name = "investment-agent-council"
 version = "0.1.0"
 description = "Local source retrieval and isolated expert briefs for evolutionary investment research"
 readme = "README.md"
@@ -56,7 +56,6 @@ exclude = ["**/runs/**", "**/__pycache__/**", "**/.env", "**/.cache/**"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "--basetemp=.cache/pytest"
 
 [tool.ruff]
 target-version = "py311"
