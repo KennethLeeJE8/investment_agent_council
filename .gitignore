@@ -1,0 +1,44 @@
+# Local credentials; the blank distributable template is safe to track.
+.env
+.env.*
+!.env.example
+
+# Generated research, local run state, and logs stay private by default.
+runs/
+
+# Planned Python development environment and caches.
+.venv/
+__pycache__/
+
+# Private, byte-identical Apple Notes snapshots stay local by default.
+contexts/resources/**/raw/
+
+# Local tooling and test outputs.
+.cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+*.egg-info/
+
+# Personal working library and machine-specific research history.
+# Keep these locally; the portable demo lives under examples/demo/ instead.
+/contexts/
+/knowledge/
+/cases/
+/PROJECT_CONTEXT.md
+/RESEARCH_COUNCIL_PLAN.md
+/geoffrey-miller-source-reading-log.md
+/matt-ridley-research-source-log.md
+/AGENTS.md
+/docs/DOCUMENTATION_RESEARCH.md
+/.local/
+/.codex/
+/.agents/
+
+# Downloads and raw third-party archives are never shared by default.
+**/raw/
+*.pem
+*.key
+.DS_Store

@@ -1,0 +1,73 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-syndicate"
+version = "0.1.0"
+description = "Local source retrieval and isolated expert briefs for evolutionary investment research"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "beautifulsoup4>=4.13,<5",
+  "langgraph>=1,<2",
+  "opentelemetry-api>=1.30,<2",
+  "opentelemetry-sdk>=1.30,<2",
+  "python-dotenv>=1,<2",
+]
+
+[project.scripts]
+council = "research_council.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8,<9", "pytest-cov>=6,<7", "ruff>=0.11,<1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/research_council"]
+
+# A source distribution must not pick up the owner's private working corpus.
+[tool.hatch.build.targets.sdist]
+include = [
+  "/src/research_council",
+  "/tests",
+  "/.github",
+  "/README.md",
+  "/CONTRIBUTING.md",
+  "/SECURITY.md",
+  "/NOTICE.md",
+  "/AGENTS.example.md",
+  "/docs/README.md",
+  "/docs/SETUP.md",
+  "/docs/CONFIGURATION.md",
+  "/docs/ARCHITECTURE.md",
+  "/docs/SOURCES.md",
+  "/docs/DEVELOPMENT.md",
+  "/docs/GITHUB_PREPARATION.md",
+  "/docs/IMPLEMENTATION_STATUS.md",
+  "/docs/ROADMAP.md",
+  "/pyproject.toml",
+  "/uv.lock",
+  "/.python-version",
+  "/.env.example",
+  "/.gitignore",
+  "/.gitattributes",
+]
+exclude = ["**/runs/**", "**/__pycache__/**", "**/.env", "**/.cache/**"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--basetemp=.cache/pytest"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.coverage.run]
+source = ["research_council"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
